@@ -1,28 +1,16 @@
-const pokemonList = [
-    {
-        name: "Bulbasaur",
-        imgSrc:
-        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png",
-
-    },
-    {
-        name: "Mew",
-    },
-];
-
-export default function PokemonCard() {
-    let pokemon = pokemonList[1];
-    
+/* eslint-disable react/prop-types */
+export default function PokemonCard({pokemon:{name, imgSrc}}) {
     return (
         <figure>
             {
-                pokemon.imgSrc ? 
-                <img src={pokemon.imgSrc}
+                // eslint-disable-next-line react/prop-types
+                imgSrc ? 
+                <img src={imgSrc}
                 alt="Bulbasaur" 
                 />
                 : <p>???</p>
             }
-            <figcaption>{pokemon.name}</figcaption>
+            <figcaption>{name}</figcaption>
         </figure>
     )
 }
