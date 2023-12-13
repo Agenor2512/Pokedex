@@ -32,20 +32,18 @@ function App() {
 
   let [pokemonIndex, setIndex] = useState(0);
 
-  const incrementIndex = () => {
-      setIndex(pokemonIndex+1)
-  }
+  const incrementIndex = () => setIndex(pokemonIndex+1)
 
-  const decrementIndex = () => {
-      setIndex(pokemonIndex-1)
-  }
+  const decrementIndex = () => setIndex(pokemonIndex-1)
   
+  const changePokemon = (index) => setIndex(index)
+
   return (
     <div>
       <PokemonCard 
       pokemon={pokemonList[pokemonIndex]}
       />
-      <NavBar displayPrevious={pokemonIndex > 0} displayNext={pokemonIndex < pokemonList.length - 1} incrementIndex={incrementIndex} decrementIndex={decrementIndex}/>
+      <NavBar pokemonList={pokemonList} changePokemon={changePokemon}/>
     </div>
   )
 }

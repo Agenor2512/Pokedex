@@ -1,16 +1,15 @@
-function NavBar({displayPrevious, displayNext, incrementIndex, decrementIndex}) {
+function NavBar({pokemonList, changePokemon}) {
     
   
 
     return (
         <div>
             {
-                displayPrevious && <button onClick={decrementIndex} style={{marginRight: "0.5rem", marginTop: "1rem", padding: "0.5rem"}}>Previous</button>
+                pokemonList
+                .map((pokemon) => (
+                    <button key={pokemon.name} onClick={() => changePokemon(pokemonList.indexOf(pokemon))}>{pokemon.name}</button>
+                ))
             }
-
-            {
-                displayNext && <button onClick={incrementIndex} style={{padding: "0.5rem"}}>Next</button>
-            } 
         </div>
     )
 }
