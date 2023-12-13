@@ -7,7 +7,7 @@ function NavBar({pokemonList, changePokemon}) {
             {
                 pokemonList
                 .map((pokemon) => (
-                    <button key={pokemon.name} onClick={() => changePokemon(pokemonList.indexOf(pokemon))}>{pokemon.name}</button>
+                    <button key={pokemon.id} onClick={() => changePokemon(pokemonList.indexOf(pokemon))}>{pokemon.name}</button>
                 ))
             }
         </div>
