@@ -2,6 +2,7 @@ import PropTypes from "prop-types";
 
 /* eslint-disable react/prop-types */
 function PokemonCard({pokemon:{name, imgSrc}}) {
+
     return (
         <figure>
             {
